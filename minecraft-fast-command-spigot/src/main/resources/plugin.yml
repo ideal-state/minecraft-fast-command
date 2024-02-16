@@ -1,0 +1,9 @@
+name: ${name}
+version: ${version}
+main: team.idealstate.minecraft.spigot.fastcommand.FastCommand
+author: ketikai
+load: STARTUP
+depend:
+  - minecraft-library-loader-spigot
+libraries:
+  - team.idealstate.hyper:hyper-command-impl:1.0.1

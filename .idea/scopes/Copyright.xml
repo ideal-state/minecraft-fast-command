@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Copyright" pattern="file[minecraft-fast-command.*.*]:*/*.java" />
+</component>
