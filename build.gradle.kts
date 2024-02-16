@@ -4,6 +4,8 @@ val properties = Properties()
 file("${projectDir}/local.properties").inputStream().use {
     properties.load(it)
 }
+val hyperCommandMajorVersion = properties["hyper.command.version.major"] as String
+
 val majorVersion = properties["self.version.major"] as String
 val authors = properties["self.authors"] as String
 val javaVersion = (properties["self.java.version"] as String).toInt()
@@ -43,6 +45,8 @@ subprojects {
         ext["authors"] = authors
         ext["javaVersion"] = javaVersion
         ext["charset"] = charset
+
+        ext["hyperCommandMajorVersion"] = hyperCommandMajorVersion
     }
 }
 

@@ -7,6 +7,8 @@ plugins {
     id("signing")
 }
 
+val hyperCommandMajorVersion = project.ext["hyperCommandMajorVersion"] as String
+
 val authors = project.ext["authors"] as String
 val javaVersion = project.ext["javaVersion"] as Int
 val charset = project.ext["charset"] as String
@@ -16,7 +18,7 @@ dependencies {
     compileOnly("org.apache.logging.log4j:log4j-api:2.22.1")
     compileOnly("org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT")
 
-    compileOnly("team.idealstate.hyper:hyper-command-impl:1.0.2")
+    compileOnly("team.idealstate.hyper:hyper-command-impl:${hyperCommandMajorVersion}")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -46,6 +48,7 @@ tasks.processResources {
     val props = mapOf(
             "name" to project.name,
             "version" to version,
+            "hyperCommandMajorVersion" to hyperCommandMajorVersion,
     )
     filesMatching(listOf("plugin.yml")) {
         expand(props)
