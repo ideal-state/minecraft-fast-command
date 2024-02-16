@@ -30,4 +30,16 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @since 1.0.0
  */
 public final class FastCommand extends JavaPlugin {
+
+    @Override
+    public void onLoad() {
+        Thread thread = Thread.currentThread();
+        ClassLoader classLoader = thread.getContextClassLoader();
+        thread.setContextClassLoader(getClassLoader());
+        try {
+            team.idealstate.hyper.command.api.FastCommand.currentContext();
+        } finally {
+            thread.setContextClassLoader(classLoader);
+        }
+    }
 }
