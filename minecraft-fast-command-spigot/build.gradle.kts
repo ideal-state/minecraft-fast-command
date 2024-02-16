@@ -16,7 +16,7 @@ dependencies {
     compileOnly("org.apache.logging.log4j:log4j-api:2.22.1")
     compileOnly("org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT")
 
-    compileOnly("team.idealstate.hyper:hyper-command-impl:1.0.1")
+    compileOnly("team.idealstate.hyper:hyper-command-impl:1.0.2")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
